@@ -49,7 +49,7 @@ export class Stack extends cdk.Stack {
       timeout: cdk.Duration.minutes(15),
       loggingFormat: cdk.aws_lambda.LoggingFormat.JSON,
       logRetention: cdk.aws_logs.RetentionDays.ONE_WEEK,
-      applicationLogLevel: cdk.aws_lambda.ApplicationLogLevel.DEBUG,
+      applicationLogLevelV2: cdk.aws_lambda.ApplicationLogLevel.DEBUG,
       // tracing: cdk.aws_lambda.Tracing.ACTIVE,
     });
 
