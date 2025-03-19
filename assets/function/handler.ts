@@ -6,7 +6,7 @@ import {
 const ENV_VALUE_SAMPLE = process.env.SOME_VALUE || 'other-value';
 
 export const handler: Handler = async (event, context: Context) => {
-  console.debug(event);
+  console.trace(event);
 
   return {
     statusCode: 200,
