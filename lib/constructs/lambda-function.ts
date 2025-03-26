@@ -6,7 +6,7 @@ import {
 import { Construct } from 'constructs';
 
 type LambdaFunctionProps = {
-  // someValue: string,
+  // someValue: string;
 }
 
 export class LambdaFunction extends Construct {
@@ -20,18 +20,18 @@ export class LambdaFunction extends Construct {
     // -----------------------------
     // IAM Policy
     // -----------------------------
-    const policyDocument = new cdk.aws_iam.PolicyDocument({
-      statements:[
-        // new cdk.aws_iam.PolicyStatement({
-        //   effect: cdk.aws_iam.Effect.ALLOW,
-        //   actions: [
-        //     'xray:PutTraceSegments',
-        //     'xray:PutTelemetryRecords',
-        //   ],
-        //   resources: [ '*' ],
-        // }),
-      ]
-    });
+    // const policyDocument = new cdk.aws_iam.PolicyDocument({
+    //   statements:[
+    //     new cdk.aws_iam.PolicyStatement({
+    //       effect: cdk.aws_iam.Effect.ALLOW,
+    //       actions: [
+    //         'xray:PutTraceSegments',
+    //         'xray:PutTelemetryRecords',
+    //       ],
+    //       resources: [ '*' ],
+    //     }),
+    //   ]
+    // });
 
     // -----------------------------
     // IAM Role
@@ -54,12 +54,12 @@ export class LambdaFunction extends Construct {
       architecture: cdk.aws_lambda.Architecture.ARM_64,
       memorySize: 128,
       timeout: cdk.Duration.minutes(15),
-      entry: path.join(__dirname, 'assets/function/handler.ts'),
+      entry: path.join(__dirname, '../../assets/function/handler.ts'),
       handler: 'handler',
       role: role,
       bundling: {
         minify: true,
-        tsconfig: path.join(__dirname, 'assets/function/tsconfig.json'),
+        tsconfig: path.join(__dirname, '../../assets/function/tsconfig.json'),
         format: cdk.aws_lambda_nodejs.OutputFormat.ESM,
       },
       environment: {
